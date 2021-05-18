@@ -1,4 +1,4 @@
-# PyMYOB
+# PyMYOB - Backported to python2.7
 [![PyPI version](https://badge.fury.io/py/pymyob.svg)](https://pypi.org/project/pymyob)
 [![versions](https://img.shields.io/pypi/pyversions/pymyob.svg)](https://pypi.org/project/pymyob)
 [![Downloads](https://pepy.tech/badge/pymyob)](https://pepy.tech/project/pymyob)
