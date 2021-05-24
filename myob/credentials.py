@@ -1,3 +1,11 @@
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+from builtins import bytes
+from future import standard_library
+standard_library.install_aliases()
+from builtins import object
 import base64
 import datetime
 
@@ -6,7 +14,7 @@ from requests_oauthlib import OAuth2Session
 from .constants import ACCESS_TOKEN_URL, AUTHORIZE_URL, MYOB_PARTNER_BASE_URL
 
 
-class PartnerCredentials:
+class PartnerCredentials(object):
     """An object wrapping the 3-step OAuth2 process for Partner MYOB API access."""
     def __init__(
         self, consumer_key, consumer_secret, callback_uri,

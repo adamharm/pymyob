@@ -1,9 +1,16 @@
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+from future import standard_library
+standard_library.install_aliases()
+from builtins import object
 from .credentials import PartnerCredentials
 from .endpoints import ALL, ENDPOINTS, GET
 from .managers import Manager
 
 
-class Myob:
+class Myob(object):
     """ An ORM-like interface to the MYOB API. """
     def __init__(self, credentials):
         if not isinstance(credentials, PartnerCredentials):
@@ -25,7 +32,7 @@ class Myob:
         return 'Myob:\n    %s' % '\n    '.join(['companyfiles', 'info'])
 
 
-class CompanyFiles:
+class CompanyFiles(object):
     def __init__(self, credentials):
         self.credentials = credentials
         self._manager = Manager('', self.credentials, raw_endpoints=[
@@ -55,7 +62,7 @@ class CompanyFiles:
         return self._manager.__repr__()
 
 
-class CompanyFile:
+class CompanyFile(object):
     def __init__(self, raw, credentials):
         self.id = raw['Id']
         self.name = raw.get('Name')

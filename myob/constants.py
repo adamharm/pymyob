@@ -1,3 +1,9 @@
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+from future import standard_library
+standard_library.install_aliases()
 MYOB_BASE_URL = 'https://api.myob.com/accountright/'
 MYOB_PARTNER_BASE_URL = 'https://secure.myob.com/oauth2/'
 

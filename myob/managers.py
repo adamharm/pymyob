@@ -1,3 +1,12 @@
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+from builtins import str
+from builtins import int
+from future import standard_library
+standard_library.install_aliases()
+from builtins import object
 import re
 import requests
 from datetime import date
@@ -15,7 +24,7 @@ from .exceptions import (
 )
 
 
-class Manager:
+class Manager(object):
     def __init__(self, name, credentials, company_id=None, endpoints=[], raw_endpoints=[]):
         self.credentials = credentials
         self.name = '_'.join(p for p in name.rstrip('/').split('/') if '[' not in p)
@@ -51,11 +60,13 @@ class Manager:
         url_keys = re.findall(r'\[([^\]]*)\]', full_endpoint)
         template = full_endpoint.replace('[', '{').replace(']', '}')
 
-        required_kwargs = url_keys.copy()
+        required_kwargs = url_keys[:]
         if method in ('PUT', 'POST'):
             required_kwargs.append('data')
 
-        def inner(*args, timeout=None, **kwargs):
+        def inner(*args, **kwargs):
+            if 'timeout' in kwargs: timeout = kwargs['timeout']; del kwargs['timeout']
+            else: timeout = None
             if args:
                 raise AttributeError("Unnamed args provided. Only keyword args accepted.")
 

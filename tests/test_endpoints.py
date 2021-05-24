@@ -1,5 +1,6 @@
 from unittest import TestCase
 from unittest.mock import patch
+import future_fstrings
 
 from myob import Myob
 from myob.credentials import PartnerCredentials
