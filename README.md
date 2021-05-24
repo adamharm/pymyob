@@ -1,9 +1,4 @@
 # PyMYOB - Backported to python2.7
-[![PyPI version](https://badge.fury.io/py/pymyob.svg)](https://pypi.org/project/pymyob)
-[![versions](https://img.shields.io/pypi/pyversions/pymyob.svg)](https://pypi.org/project/pymyob)
-[![Downloads](https://pepy.tech/badge/pymyob)](https://pepy.tech/project/pymyob)
-[![Test](https://github.com/uptick/pymyob/workflows/Test/badge.svg)](https://github.com/uptick/pymyob/actions?query=workflow%3ATest)
-[![Lint](https://github.com/uptick/pymyob/workflows/Lint/badge.svg)](https://github.com/uptick/pymyob/actions?query=workflow%3ALint)
 
 A Python API around [MYOB's AccountRight Live API](http://developer.myob.com/api/accountright/v2/).
 
@@ -12,11 +7,6 @@ A Python API around [MYOB's AccountRight Live API](http://developer.myob.com/api
 Register for API Keys with MYOB. You'll find detailed instructions [here](http://developer.myob.com/api/accountright/api-overview/getting-started/).
 
 ## Getting started
-
-Install:
-```
-pip install pymyob
-```
 
 Create a `PartnerCredentials` instance and provide the Key, Secret and Redirect Uri as you've set up in MYOB:
 ```
